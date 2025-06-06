@@ -5,7 +5,7 @@ import Ract, { useEffect, useState } from 'react'
 import { useSQLiteContext } from 'expo-sqlite';
 import styleSus from '../styles/styleSuscribe';
 import { useLoginMutation } from '../features/auth/authApi';
-
+import styleModal from '../styles/Modal'
 function Loggin({ navigation }) {
 
     const db = useSQLiteContext()
@@ -81,11 +81,11 @@ function Loggin({ navigation }) {
                 visible={modalVisible}
                 onRequestClose={() => setModalVisible(false)}>
 
-                <View style={despacho_style.ConteinerModal}>
-                    <View style={despacho_style.modal}>
-                        <Text style={[despacho_style.labelModal, { fontSize: 25 }]}>{mensajeModal}</Text>
-                        <TouchableOpacity onPress={() => setModalVisible(false)} style={[Boton.boton, { width: '100%' }]}>
-                            <Text style={Boton.labelBoton}>Cerrar</Text>
+                <View style={styleModal.ConteinerModal}>
+                    <View style={styleModal.modal}>
+                        <Text style={[styleModal.labelModal, { fontSize: 25 }]}>{mensajeModal}</Text>
+                        <TouchableOpacity onPress={() => setModalVisible(false)} style={[styleModal.boton, { width: '100%' }]}>
+                            <Text style={styleModal.labelBoton}>Cerrar</Text>
                         </TouchableOpacity>
                     </View>
                 </View>

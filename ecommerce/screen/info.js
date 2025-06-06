@@ -1,11 +1,12 @@
-import { View, Text, TouchableOpacity, Modal, Platform } from 'react-native';
+import { View, Text, TouchableOpacity, Modal, Platform, ImageBackground } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import MapView, { Marker } from 'react-native-maps'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { clearUser } from '../features/auth/authSlice';
 import { useSQLiteContext } from 'expo-sqlite';
-
+import styleModal from '../styles/Modal'
 import styleInfo from '../styles/styleInfo';
+import { useState } from 'react';
 
 function Info() {
   const user = useSelector(state => state.auth.email);
@@ -35,14 +36,14 @@ function Info() {
 
   return (
     <View style={styleInfo.container}>
-      <Text style={styleInfo.welcomeText}>Bienvenido</Text>
+      <Text style={styleInfo.titulo}>Bienvenido</Text>
 
       <View style={styleInfo.avatarContainer}>
-        <View style={styleInfo.circle}>
-          <Text style={styleInfo.initial}>{initial}</Text>
+        <View style={styleInfo.circuloUser}>
+          <Text style={styleInfo.inicialName}>{initial}</Text>
         </View>
 
-        <TouchableOpacity style={styleInfo.cameraButton}>
+        <TouchableOpacity style={styleInfo.camaraBoton}>
           <Icon name="photo" size={24} color="#fff" />
         </TouchableOpacity>
       </View>
@@ -54,7 +55,7 @@ function Info() {
           padding: 8,
         }} onPress={logout}>
           <Text style={{ fontSize: 15, fontWeight: "bold" }}>cerrar sesion</Text>
-          <Icon name="logout" size={24} style={{ alignSelf: "center" }} />
+          <Icon name="logout" size={24} style={{borderRadius:5, alignSelf: "center" ,backgroundColor:"red" ,color:"white",fontWeight:"bold"}} />
         </TouchableOpacity>
 
 
@@ -84,11 +85,11 @@ function Info() {
         visible={modalVisible}
         onRequestClose={() => setModalVisible(false)}>
 
-        <View style={despacho_style.ConteinerModal}>
-          <View style={despacho_style.modal}>
-            <Text style={[despacho_style.labelModal, { fontSize: 25 }]}>{mensajeModal}</Text>
-            <TouchableOpacity onPress={() => setModalVisible(false)} style={[Boton.boton, { width: '100%' }]}>
-              <Text style={Boton.labelBoton}>Cerrar</Text>
+        <View style={styleModal.ConteinerModal}>
+          <View style={styleModal.modal}>
+            <Text style={[styleModal.labelModal, { fontSize: 25 }]}>{mensajeModal}</Text>
+            <TouchableOpacity onPress={() => setModalVisible(false)} style={[styleModal.boton, { width: '100%' }]}>
+              <Text style={styleModal.labelBoton}>Cerrar</Text>
             </TouchableOpacity>
           </View>
         </View>

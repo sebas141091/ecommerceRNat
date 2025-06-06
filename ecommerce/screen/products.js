@@ -1,5 +1,6 @@
 import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native'
 import productos from '../datos/productos'
+import ListProd from './ListProduct';
 
 function Products() {
 
@@ -35,26 +36,7 @@ function Products() {
         <View style={{ flex: 1, justifyContent: "space-around" }}>
 
             <Text style={{ fontSize: 40, marginTop: 50, fontWeight: "bold" }}>Products</Text>
-            <View>
-                <FlatList style={{}}
-                    data={productosConIMGLocal}
-                    keyExtractor={(item) => item.id.toString()}
-                    renderItem={({ item }) => (
-                        <View style={{
-                            borderWidth: 2, borderColor: "black"
-                            , margin: 5, borderRadius: 22
-                        }}>
-                            <TouchableOpacity style={{ flexDirection: "row", justifyContent: "space-around" }}>
-                                <Text style={{ fontSize: 20, fontWeight: "bold" }}>{item.productos}</Text>
-                                <Image
-                                    source={item.imagelocal}
-                                    style={{ width: 130, height: 130 }}
-                                />
-                            </TouchableOpacity>
-                        </View>
-                    )}
-                />
-            </View>
+            <ListProd prods={productosConIMGLocal}/>
         </View>
     )
 

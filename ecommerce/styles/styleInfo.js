@@ -8,7 +8,7 @@ container: {
     backgroundColor: '#fff',
     flex: 1,
   },
-  welcomeText: {
+  titulo: {
     fontSize: 32,
     fontWeight: 'bold',
     marginBottom: 40,
@@ -17,7 +17,7 @@ container: {
     position: 'relative',
     marginBottom: 20,
   },
-  circle: {
+  circuloUser: {
     width: 120,
     height: 120,
     borderRadius: 60,
@@ -25,12 +25,12 @@ container: {
     justifyContent: 'center',
     alignItems: 'center',
   },
-  initial: {
+  inicialName: {
     fontSize: 48,
     color: '#333',
     fontWeight: 'bold',
   },
-  cameraButton: {
+  camaraBoton: {
     position: 'absolute',
     bottom: 0,
     right: -10,

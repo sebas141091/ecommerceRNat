@@ -24,7 +24,7 @@ const TabNavigator = () => {
             <Tab.Screen
                 options={
                     {
-                        tabBarLabel: ({ focused }) => (<Text style={{ color: focused ? 'white' : 'black', fontSize: 20 }}>Info</Text>),
+                        tabBarLabel: ({ focused }) => (<Text style={{ color: focused ? 'white' : 'black', fontSize: 20 }}>Productos</Text>),
                         tabBarIcon: ({ focused }) => (<Icon name='storefront' size={32} color={focused ? 'white' : 'black'} />)
 
                     }
