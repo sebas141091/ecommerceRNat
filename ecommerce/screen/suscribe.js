@@ -12,6 +12,7 @@ function Suscribe({ navigation }) {
   const [signup, { isLoading }] = useSignupMutation();
   const [modalVisible, setModalVisible] = useState(false);
   const [mensajeModal, setMensajeModal] = useState('');
+  
   const mostrarAlerta = (mensaje) => {
     setMensajeModal(mensaje);
     setModalVisible(true);
